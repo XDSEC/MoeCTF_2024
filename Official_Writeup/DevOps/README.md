@@ -84,15 +84,15 @@ scp -P [WSRX port] ./busybox user@localhost:
 
 ```sh
 # 在 neighbor 上
-od -v -t x1 /bin/true | awk '{for (i=2; i<=NF; i++) printf "\\x%s", $i}' | nc -lvp 8000
+od -v -t x1 ./busybox | awk '{for (i=2; i<=NF; i++) printf "\\x%s", $i}' | nc -lvp 8000
 ```
 
 ```sh
 # 在 broken 上，需要注意文件过大可能超出 read 的 32 位整数范围了，
 # 第一次使用 `>` 清空，后面则使用 `>>` 附加，
 # 执行个几次之后应该就能够从 neighbor 上把文件完整的传过来了，后面的过程保持一致。
-exec [fd] <>/dev/tcp/127.0.0.1/8000 && read -u [fd] -N [size] -r [var] && printf $[var] > /bin/cp
-exec [fd] <>/dev/tcp/127.0.0.1/8000 && read -u [fd] -N [size] -r [var] && printf $[var] >> /bin/cp
+exec [fd]<> /dev/tcp/127.0.0.1/8000 && read -u [fd] -N [size] -r [var] && printf $[var] > /bin/cp
+exec [fd]<> /dev/tcp/127.0.0.1/8000 && read -u [fd] -N [size] -r [var] && printf $[var] >> /bin/cp
 ```
 
 #### bash loadables
