@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    environment:
+      - FLAG=moectf{env_test}
+    ports:
+      - "8099:80"
+

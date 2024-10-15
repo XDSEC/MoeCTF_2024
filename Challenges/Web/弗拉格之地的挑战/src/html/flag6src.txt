@@ -1,0 +1,9 @@
+<?php
+highlight_file("flag6diw.php");
+if (isset($_GET['moe']) && $_POST['moe']) {
+    if (preg_match('/flag/', $_GET['moe'])) {
+        die("no");
+    } elseif (preg_match('/flag/i', $_GET['moe'])) {
+        echo "flag6: xxx";
+    }
+}

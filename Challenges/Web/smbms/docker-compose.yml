@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8099:8080"
+    environment:
+      # - MARIADB_ROOT_PASSWORD=root
+      - FLAG=moectf{environment_test}
+

@@ -1,0 +1,4 @@
+# Robots.txt file for xdsec.org
+# only robots can find the entrance of web-tutor
+User-agent: *
+Disallow: /webtutorEntry.php

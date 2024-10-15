@@ -1,0 +1,4 @@
+title: 弗拉格之地的挑战
+flag: moectf{AftEr_th1s_tUT0r_I_th1ke_U_kknow_WeB}
+
+描述: 千辛万苦闯入了弗拉格之地，但是怎么拿到七颗龙珠呢
