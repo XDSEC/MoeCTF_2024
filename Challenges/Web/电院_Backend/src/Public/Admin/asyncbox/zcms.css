@@ -1,0 +1,84 @@
+@charset "utf-8";
+/*!-----------------------------------------------------------------------------
+   AsyncBox default v1.5 - http://asyncui.com/skin - Copyright 2012, Wuxinxi007
+   -----------------------------------------------------------------------------!*/
+
+body{margin:0;height:100%} asyncui{display:block}
+.asyncbox{
+position: absolute;
+font: 14px 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+
+padding: 41px 45px 28px;
+border: 1px solid #08c;
+box-shadow: 0px 0px 10px #9af;
+border-radius: 6px;
+}
+
+
+
+ab_clone{border:1px dotted #666}
+table.ab_outer{width:auto;height:auto;border-collapse:collaps}
+.asyncbox table,.asyncbox td,.asyncbox ul{margin:0;padding:0;list-style:none}
+
+
+.ab_border{font-size:0}
+/* 上左中右下 */
+
+.ab_l div,.ab_r div{width:13px}
+
+
+
+/* 顺时针四个角 */
+
+
+.ab_title{
+position: relative;
+height: 33px;
+margin-top: -40px;
+color: #aff;
+cursor: default;
+padding-right: 20px;
+overflow: hidden;
+-moz-user-select: none;
+font-weight: bold;
+line-height: 35px;
+text-shadow: 0 0 0px #333;
+}
+.ab_close{position:absolute;top:7px;_top:8px;right:0;width:26px;height:15px;background-position:-28px 0;}
+.ab_close:hover{background-position:-28px -15px;_background-position:0 -15px}
+
+/*asyncbox alert...*/
+.asyncbox_alert,.asyncbox_confirm,.asyncbox_success,.asyncbox_warning,.asyncbox_error{
+color: #fff;
+margin: 10px;
+line-height: 18px;
+padding-left: 40px;
+text-align: left;
+padding-top: 0px;
+font-weight: 700;
+}
+.asyncbox_alert span,.asyncbox_confirm span,.asyncbox_success span,.asyncbox_warning span,.asyncbox_error span{
+	width:36px;height:34px;position:absolute;top:40px;left:21px;
+}
+.asyncbox_confirm span{background-position:-91px 0}
+.asyncbox_success span{background-position:-127px 0}
+.asyncbox_warning span{background-position:-163px 0}
+.asyncbox_error span{background-position:-199px 0}
+.asyncbox_error{color:#F00}
+.asyncbox_prompt{color:#033;padding:0 10px}
+.asyncbox_prompt li{margin-top:8px}
+.asyncbox_prompt input,.asyncbox_prompt textarea{color:#555;margin:0;padding:2px;border:1px solid #09c;font:12px/1.3em Verdana,sans-serif;resize:none}
+.asyncbox_prompt input{height:17px}
+
+.ab_footbar{padding:10px 10px 0px 0px;text-align:right}
+.ab_footbar a{margin:0;padding:0;display:inline-block;border:none;text-decoration:none;height:22px;}
+.ab_footbar span{color:#aff;margin:5px;float:left;height:16px;border: 1px solid #aaa;padding: 4px;}
+div.asyncbox:hover, .ab_footbar span:hover {
+	border: 1px solid #3ef;
+	box-shadow: 0px 0px 10px #fff;
+}
+.ab_footbar a:hover{background-position:-55px -56px;text-decoration:none}
+.ab_footbar a:hover span{color:#3ef;background-position:100% -56px}
+.ab_outer tr:hover {
+	background-color: transparent;
+}

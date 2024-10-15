@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web入门指北</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+	<style>
+        body {
+            text-align: center; /* 将文本内容居中 */
+			width: 50%; /* 设置块级元素的宽度 */
+            margin: 0 auto; /* 使用 margin 属性实现水平居中 */
+            background-color: #f0f0f0; /* 为了演示效果，设置背景颜色 */
+            padding: 20px; /* 设置内边距增加可读性 */
+        }
+    </style>
+</head>
+<body>
+	<h1 class="title">Welcome to Moectf</h1>
+	<div id="xt"></div>
+    <script>
+        fetch('script.php')
+            .then(response => response.json())
+            .then(data => {
+                var ciphertext = data.ciphertext;
+                var key = CryptoJS.enc.Utf8.parse(data.key);
+                var iv = CryptoJS.enc.Utf8.parse("17829693");
+                
+                
+                var decodedCiphertext = CryptoJS.enc.Base64.parse(ciphertext);
+                
+                
+                var decrypted = CryptoJS.AES.decrypt({ ciphertext: decodedCiphertext }, key, {
+                    iv: iv,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+                
+                
+                var plaintext = decrypted.toString(CryptoJS.enc.Utf8);
+                
+
+                document.getElementById('xt').innerHTML = '<p>' + plaintext + '</p>';
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>登录 - 后台管理中心 - 西安电子科技大学电子工程学院</title><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="/Public/Admin/css/bootstrap.min.css" /><link rel="stylesheet" href="/Public/Admin/css/bootstrap-responsive.min.css" /><link rel="stylesheet" href="/Public/Admin/css/matrix-login.css" /><link rel="stylesheet" type="text/css" href="/Public/Admin/asyncbox/zcms.css" /><script type="text/javascript" src="/Public/Admin/js/jquery-1.9.0.min.js"></script><script type="text/javascript" src="/Public/Admin/js/functions.js"></script><script type="text/javascript" src="/Public/Admin/js/jquery.form.js"></script><script type="text/javascript" src="/Public/Admin/asyncbox/asyncbox.js"></script><style type="text/css">
+		input,button {
+			font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+			font-size: 15px!important;
+		}
+		img {
+			height: 40px!important;
+			margin-bottom: 4px;
+		}
+		div.form-actions {
+			width: 356px;
+			position: relative;
+			left: 17px;
+			border-top: #555;
+		}
+		div.form-actions span.pull-left a {
+			width: 70px;
+			height: 20px;
+		}
+		body {
+			height: 0;
+		}
+		#loginbox {
+			top: 65px;
+			border: 1px solid #666;
+			box-shadow: 0px 0px 20px #023;
+		}
+		#loginbox form {
+			border-top: 1px solid #2E363F;
+		}
+		button {
+			height: 30px;
+			width: 105px;
+			font-size: 15px!important;
+		}
+		.normal_text {
+			border-bottom: 1px solid #3f4954;
+			height: 45px;
+		}
+		.ab_footbar span {
+			margin: 0;
+		}
+		</style></head><body><div id="loginbox"><form id="loginform" class="form-vertical" action="login.php" method="post"><div class="control-group normal_text"><h3><img src="/Public/Admin/img/logo.png" alt="Logo" /></h3></div><div class="control-group"><div class="controls"><div class="main_input_box"><span class="add-on bg_lg"><i class="icon-user"></i></span><input type="text" name="email"  id="email" placeholder="邮箱" /></div></div></div><div class="control-group"><div class="controls"><div class="main_input_box"><span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="pwd" id="pwd" placeholder="密码" /></div></div></div><div class="control-group"><div class="controls"><div class="main_input_box"><span class="add-on bg_lb"><i class="icon-ok"></i></span><input type="text" name="verify_code" id="verify_code" placeholder="验证码"><img src="verify.php"  title="看不清？单击此处刷新" onClick="this.src+='?&rand='+Math.random();"  style="cursor: pointer; vertical-align: middle;height:38px;position:absolute;right:8.5%;" /></div></div></div><input type="hidden" name="op_type" id="op_type" value="1"/><input type="hidden" name="__hash__" value="c482be538835a03ad4d1c112d174555b_c7b44624f727c7ee6260df2a323eecaa" /></form><div class="form-actions" style="width:82%;left:0;padding-left:9%;padding-right:9%;"><span class="pull-left"><button class="btn btn-success submit">登录</button></span><!--<span class="pull-right"><button class="btn btn-info findPwd">忘记密码？</button></span>--><span class="pull-right"><a class="btn btn-info" href="/admin/" style="width:79px;">刷新</a></span></div></div><script type="text/javascript">
+        $(function(){
+            $(".submit").click(function(){
+                $("#op_type").val("1");
+                if($("#email").val()==''||$("#pwd").val()==''||$("#verify_code").val()==''){
+                    popup.alert("填写完整方可登陆");
+                    return false;
+                }
+                commonAjaxSubmit("login.php");
+            });
+            $(".findPwd").click(function(){
+                $("#op_type").val("2");
+                if($("#email").val()==''){
+                    popup.alert("填写了你的邮箱方可找回密码");
+                    return false;
+                }
+                if($("#verify_code").val()==''){
+                    popup.alert("请写验证码方可找回密码");
+                    return false;
+                }
+                commonAjaxSubmit();
+            });
+        });
+    </script></body></html>

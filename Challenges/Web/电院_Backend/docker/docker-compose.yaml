@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: ../
+    # image: test
+    ports:
+      - "8080:80"
+    environment:
+      - FLAG=moectf{docker_is_awesome}

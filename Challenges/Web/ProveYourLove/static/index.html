@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表白墙</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-image: url('static/image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: #fff;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], textarea, select {
+            width: calc(100% - 16px); /* 统一宽度，减去内边距 */
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+            color: #fff;
+            box-sizing: border-box; /* 确保宽度包括内边距和边框 */
+        }
+        textarea {
+            width: calc(100% - 16px); /* 确保文本区域宽度一致 */
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .status {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>表白墙</h1>
+        <form id="confessionForm">
+            <label for="nickname">昵称:</label>
+            <input type="text" id="nickname" name="nickname" required placeholder="输入您的昵称">
+
+            <label for="user_gender">您的性别:</label>
+            <select id="user_gender" name="user_gender" required>
+                <option value="male">男</option>
+                <option value="female">女</option>
+                <option value="other">其他</option>
+            </select>
+
+            <label for="target">表白对象:</label>
+            <input type="text" id="target" name="target" required placeholder="输入您表白的对象">
+
+            <label for="target_gender">表白对象的性别:</label>
+            <select id="target_gender" name="target_gender" required>
+                <option value="male">男</option>
+                <option value="female">女</option>
+                <option value="other">其他</option>
+            </select>
+
+            <label for="message">表白内容:</label>
+            <textarea id="message" name="message" rows="6" required placeholder="输入您的表白内容"></textarea>
+
+            <label for="anonymous">是否匿名:</label>
+            <select id="anonymous" name="anonymous" required>
+                <option value="false">不匿名</option>
+                <option value="true">匿名</option>
+            </select>
+
+            <input type="submit" value="提交表白">
+        </form>
+
+        <div class="status">
+            当前表白份数: <span id="confessionCount">加载中...</span><br>
+            flag: <span id="flag">访问confession_count获取</span><br>
+            Qixi_flag: <span id="Qixi_flag">访问questionnaire_count获取</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取当前表白份数
+            fetch('/confession_count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('confessionCount').textContent = data.count;
+                    document.getElementById('flag').textContent = data.flag;
+                    document.getElementById('Qixi_flag').textContent = data.Qixi_flag;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+        document.getElementById('confessionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (localStorage.getItem('confessionSubmitted')) {
+                alert('您已经提交过表白，不能重复提交。');
+                return;
+            }
+
+            // 发起 OPTIONS 请求
+            fetch('/questionnaire', {
+                method: 'OPTIONS'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('OPTIONS 请求失败');
+                }
+
+                // 获取表单数据
+                const formData = new FormData(event.target);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                // 提交表白数据
+                return fetch('/questionnaire', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    alert('表白提交成功！');
+                    localStorage.setItem('confessionSubmitted', 'true');
+
+                    // 更新表白份数
+                    fetch('/confession_count')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('confessionCount').textContent = data.count;
+                            document.getElementById('flag').textContent = data.flag;
+                            document.getElementById('Qixi_flag').textContent = data.Qixi_flag;
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                } else {
+                    alert('表白提交失败，请稍后重试。');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
