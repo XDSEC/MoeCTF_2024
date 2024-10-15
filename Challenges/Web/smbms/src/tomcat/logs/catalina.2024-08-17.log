@@ -1,0 +1,47 @@
+17-Aug-2024 08:41:47.240 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/9.0.85
+17-Aug-2024 08:41:47.245 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        Jan 5 2024 08:28:07 UTC
+17-Aug-2024 08:41:47.245 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      9.0.85.0
+17-Aug-2024 08:41:47.245 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Linux
+17-Aug-2024 08:41:47.245 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.10.3-200.fc40.x86_64
+17-Aug-2024 08:41:47.245 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              amd64
+17-Aug-2024 08:41:47.246 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     /usr/lib/jvm/java-17-openjdk-17.0.12.0.7-2.fc40.x86_64
+17-Aug-2024 08:41:47.246 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    17.0.12+7
+17-Aug-2024 08:41:47.246 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Red Hat, Inc.
+17-Aug-2024 08:41:47.246 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85
+17-Aug-2024 08:41:47.246 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85
+17-Aug-2024 08:41:47.258 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.io=ALL-UNNAMED
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.util=ALL-UNNAMED
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85/conf/logging.properties
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+17-Aug-2024 08:41:47.259 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85
+17-Aug-2024 08:41:47.260 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85
+17-Aug-2024 08:41:47.260 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85/temp
+17-Aug-2024 08:41:47.265 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 在java.library.path:[/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]上找不到基于APR的Apache Tomcat本机库，该库允许在生产环境中获得最佳性能
+17-Aug-2024 08:41:47.473 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+17-Aug-2024 08:41:47.496 信息 [main] org.apache.catalina.startup.Catalina.load 服务器在[450]毫秒内初始化
+17-Aug-2024 08:41:47.527 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+17-Aug-2024 08:41:47.527 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/9.0.85]
+17-Aug-2024 08:41:47.531 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85/webapps/ROOT]
+17-Aug-2024 08:41:47.948 信息 [main] org.apache.jasper.servlet.TldScanner.scanJars 至少有一个JAR被扫描用于TLD但尚未包含TLD。 为此记录器启用调试日志记录，以获取已扫描但未在其中找到TLD的完整JAR列表。 在扫描期间跳过不需要的JAR可以缩短启动时间和JSP编译时间。
+17-Aug-2024 08:41:47.999 信息 [main] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[/home/sxrhhh/code/create-ctf/24moe/smbms/apache-tomcat-9.0.85/webapps/ROOT]的部署已在[463]毫秒内完成
+17-Aug-2024 08:41:48.001 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+17-Aug-2024 08:41:48.008 信息 [main] org.apache.catalina.startup.Catalina.start [511]毫秒后服务器启动
+17-Aug-2024 08:43:15.266 信息 [Thread-1] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+17-Aug-2024 08:43:15.274 信息 [Thread-1] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+17-Aug-2024 08:43:15.295 警告 [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc Web应用程序 [ROOT] 注册了JDBC驱动程序 [com.mysql.cj.jdbc.Driver]，但在Web应用程序停止时无法注销它。 为防止内存泄漏，JDBC驱动程序已被强制取消注册。
+17-Aug-2024 08:43:15.295 警告 [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads Web应用程序[ROOT]似乎启动了一个名为[mysql-cj-abandoned-connection-cleanup]的线程，但未能停止它。这很可能会造成内存泄漏。线程的堆栈跟踪：[
+ java.base@17.0.12/java.lang.Object.wait(Native Method)
+ java.base@17.0.12/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:840)]
+17-Aug-2024 08:43:15.308 信息 [Thread-1] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+17-Aug-2024 08:43:15.316 信息 [Thread-1] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]

@@ -1,0 +1,4 @@
+title：静态网页
+description: 无意间发现 Sxrhhh 的个人博客。但是好像是静态博客，应该没什么攻打的必要了。。。 
+
+动态 flag

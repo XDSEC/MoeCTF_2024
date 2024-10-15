@@ -1,0 +1,58 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/mybatis</param-value>
+  </context-param>
+
+
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>top.sxrhhh.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>getc</servlet-name>
+    <servlet-class>top.sxrhhh.servlet.GetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getc</servlet-name>
+    <url-pattern>/getc</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>gp</servlet-name>
+    <servlet-class>top.sxrhhh.servlet.ServletDemo03</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>gp</servlet-name>
+    <url-pattern>/gp</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>sd4</servlet-name>
+    <servlet-class>top.sxrhhh.servlet.ServletDemo04</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sd4</servlet-name>
+    <url-pattern>/sd4</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>sd5</servlet-name>
+    <servlet-class>top.sxrhhh.servlet.ServletDemo05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sd5</servlet-name>
+    <url-pattern>/sd5</url-pattern>
+  </servlet-mapping>
+</web-app>
