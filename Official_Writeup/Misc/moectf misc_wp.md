@@ -1,6 +1,7 @@
 # Moe2024 official Misc wp
 ## 杂项入门指北
 打开图片仔细观察发现其中某条线是由'.'与'-'的组合，猜测为Morse Code
+
 ![haibao-1.png](./photos/haibao-1.png)
 ![haibao-2.png](./photos/haibao-2.png)
 
@@ -19,6 +20,7 @@
 题解1：stegsolve逐帧分析，找到flag相关的图片
 题解2：简单的在线解码工具，去扫描二维码，（因为图片有两帧），可以捕捉到并识别
 其他在线网站不予以罗列
+
 ![alt text](./photos/image.png)
 
 ---
@@ -354,6 +356,7 @@ print("Successfully")
 ---
 ## ctfer2077③
 注意到给的是一个流量包，协议分级看到大部分数据都集中在http协议，筛选后看具体的内容发现是一个Post请求，上传了一个压缩包，提取进行下一步
+
 ![ctfer2077③-1.png](./photos/ctfer2077③-1.png)
 
 ![ctfer2077③-2.png](./photos/ctfer2077③-2.png)
