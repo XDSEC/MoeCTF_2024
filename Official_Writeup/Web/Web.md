@@ -1,7 +1,3 @@
----
-typora-root-url: ./img
----
-
 ## web入门指北
 
 phpstudy傻瓜式安装即可，鼓励大家自行搭建，然后附件源码放网站根目录（phpstudy默认一般是WWW），注意删除根目录下的index.php, 覆盖index.html, 因为默认配置访问根目录（GET /）index.php的优先级比index.html高，浏览器输入正确url访问即可回显flag
@@ -87,7 +83,7 @@ bW9lY3Rme0FmdEVyX3RoMXNfdFVUMHJfSV90aDFrZV9VX2trbm93X1dlQn0=
 
 按要求做，做下一步时不要丢弃上一步的操作
 
-![](/img1.png)
+![](img/img1.png)
 
 ## ProveYourLove
 
@@ -567,11 +563,11 @@ GET: ?id={{"".__class__.__base__.__subclasses__()[137].__init__.__globals__['pop
 
 题目给了源码文件，5000端口映射在外网，但是app2.py运行在一个随机端口（5001-6000）需要借助ssrf爆破内网app2的端口
 
-![](/img2.png)
+![](img/img2.png)
 
 可以通过暴露出来的服务打ssrf爆破app2的运行端口，从而借助ssrf窃取内网app2的图片
 
-![](/img3.png)
+![](img/img3.png)
 
 ## PetStore
 
