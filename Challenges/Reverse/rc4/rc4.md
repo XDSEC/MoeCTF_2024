@@ -1,0 +1,1 @@
+rc4是一种对称加密。等等，为什么要说[对称](https://zh.wikipedia.org/wiki/對稱密鑰加密)？
