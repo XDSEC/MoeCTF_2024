@@ -1,0 +1,39 @@
+我...我快撑不住了，刚刚看见了cfbb显示器被发现了，显示器上的flag....moectf{}..中间是什么呢....
+好像是7个字符...数字在第3和第7个位置，第一个字母是c，倒数第二个是m....其他也都是小写字母？？
+*啊我的视线已经变得模糊（心理描写）*，(与此同时他用尽最后一股力气凑近屏幕但是再也看不清什么)。
+*xdsec粗话*，我真应该买一个能...拍...照...白的....手..木......  (此时他的声音已经逐渐听不清)，电话被杂音所覆盖.............
+
+救援人员来后，只在电脑硬盘上获取到了blackhole.exe的源码，除此之外只有被加密后的dll文件了。
+请一定帮我们找出flag...
+
+这是blackhole.exe的源码
+
+#include <iostream>
+#include <Windows.h>
+int main()
+{
+    HMODULE h = NULL;
+    h = LoadLibraryA("you_cannot_crack_me.vmp.dll");
+    if (!h)
+    {
+        printf("failed to load dll...\n");
+        return -1;
+    }
+    typedef int(*checkFlag)(char *, size_t);
+    checkFlag check = (checkFlag)GetProcAddress(h, "checkMyFlag");
+    printf("input your flag\n");
+    char buf[100];
+    scanf_s("%100s", buf, 100);
+    size_t len = strlen(buf);
+    if (check(buf, len))
+    {
+        printf("Correct!\n");
+    }
+    else {
+        printf("FAILED!!!\n");
+    }
+
+    CloseHandle(h);
+
+    return 0;
+}
