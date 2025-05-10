@@ -1,0 +1,3 @@
+一个奇怪的模块，隐藏着关于某场黑客比赛的秘密……
+
+请使用Magisk Manager或同样实现的管理器(如KernelSU,本题仅在KernelSU进行了测试)刷入
